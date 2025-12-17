@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ TODO ROUTES
+
 app.use("/api/todos", require("./routes/todo.routes"));
 
 app.get("/", (req, res) => {

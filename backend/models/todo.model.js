@@ -1,8 +1,6 @@
 const db = require("../config/db");
 
-/**
- * Create Todo
- */
+
 const createTodo = async ({ title, description }) => {
   const query = `
     INSERT INTO todos (title, description)
@@ -14,9 +12,7 @@ const createTodo = async ({ title, description }) => {
   return rows[0];
 };
 
-/**
- * Get All Todos
- */
+
 const getAllTodos = async () => {
   const query = `
     SELECT *
@@ -27,10 +23,6 @@ const getAllTodos = async () => {
   return rows;
 };
 
-/**
- * Update Todo (NO completion here)
- * Use this for title / description / future fields
- */
 const updateTodo = async (id, data) => {
   const { title, description } = data;
 
@@ -53,9 +45,7 @@ const updateTodo = async (id, data) => {
   return rows[0];
 };
 
-/**
- * Mark Todo as Completed (ACTION)
- */
+
 const completeTodo = async (id) => {
   const query = `
     UPDATE todos
@@ -67,9 +57,7 @@ const completeTodo = async (id) => {
   return rows[0];
 };
 
-/**
- * Delete Todo
- */
+
 const deleteTodo = async (id) => {
   const query = `
     DELETE FROM todos
